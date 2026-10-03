@@ -47,7 +47,7 @@ The form validates required name, email, inquiry type, and a message of at least
 
 ## Client content still required
 
-- Approved professional biography, qualifications, experience, expertise, and portrait for Valerio Tanguilig.
+- Review the LinkedIn-based professional summary and provide a portrait for Valerio Tanguilig. See PROFILE-SOURCES.md.
 - Actual product names, images, descriptions, availability, and confirmed categories.
 - Approval of draft company, mission, and vision copy.
 - Final privacy policy and terms appropriate to the published service and hosting environment; current dialogs explicitly identify draft notices.
@@ -61,4 +61,4 @@ Locally downloaded Unsplash images (no image requests to external services at ru
 - Fields: https://images.unsplash.com/photo-1500382017468-9049fed747ef
 - Produce: https://images.unsplash.com/photo-1471193945509-9ad0617afabf
 
-The supplied LinkedIn profile is linked only. No qualifications or profile text were extracted or invented.
+The professional summary is paraphrased from publicly indexed LinkedIn information at the user?s request. PROFILE-SOURCES.md records the evidence and image-access limitation.

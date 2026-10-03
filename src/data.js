@@ -28,5 +28,13 @@ export const steps = [
   ['Support','We help connect the right agricultural products, technologies, or resources.'],
   ['Connect','We help bridge producers with relevant market opportunities and industry relationships.'],
 ];
-export const profile = {biography:'[Professional biography to be supplied]',qualifications:'[Qualifications]',experience:'[Industry experience]',expertise:'[Areas of expertise]',portrait:null};
+// Paraphrased from the supplied public LinkedIn profile on 4 October 2026.
+// Public experience entries omit role titles and dates; do not infer these.
+export const profile = {
+  biography:'Valerio brings a background in plant biology and agronomy, alongside experience in operations and research and development management. His professional interests connect crop science, practical technical support, and agricultural problem-solving.',
+  qualifications:'University of the Philippines Los Baños; Nutrient Advantage Agronomy in Practice (Incitec Pivot Fertilisers, 2017).',
+  experience:'Plant biology and agronomy; operations and R&D management.',
+  expertise:'Technical support, research, training, project management, and environmental consulting.',
+  portrait:null,
+};
 export const inquiryTypes = ['Consulting','Agricultural Products','Market Connections','Partnership','General Inquiry'];
