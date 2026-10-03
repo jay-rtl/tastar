@@ -3,7 +3,7 @@ import '@fontsource/manrope/latin-500.css';
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-500.css';
 import './styles.css';
-import {company as c, navigation, services, products, steps, profile, inquiryTypes} from './data.js';
+import {company as c, navigation, services, products, steps, profile, inquiryTypes, featuredInsight} from './data.js';
 import {icon} from './icons.js';
 import {initMotion} from './motion.js';
 
@@ -70,6 +70,11 @@ document.querySelector('#app').innerHTML = `
 
   <section id="profile" class="profile section"><div class="wrap profile-grid"><div class="portrait-placeholder" role="img" aria-label="Professional portrait of Valerio Tanguilig to be supplied">${motif}<span class="portrait-monogram">VT</span><span class="micro">PROFESSIONAL PORTRAIT TO BE SUPPLIED</span></div><div class="profile-content">${eyebrow('07','THE PERSON BEHIND TASTAR')}<h2 data-reveal>${c.contact}</h2><p class="profile-subtitle">Triple A Services, Technologies, and Resources</p><p>${profile.biography}</p><dl class="credentials"><div><dt>Qualifications</dt><dd>${profile.qualifications}</dd></div><div><dt>Industry experience</dt><dd>${profile.experience}</dd></div><div><dt>Areas of expertise</dt><dd>${profile.expertise}</dd></div></dl><a class="button button-forest" href="${c.linkedin}" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ${icon('northeast')}</a></div></div></section>
 
+
+  <section id="insights" class="insight section wrap" aria-labelledby="insight-title">
+    <div class="insight-intro"><div class="eyebrow">INSIGHTS FROM VALERIO</div><h2 id="insight-title" data-reveal>${featuredInsight.title}</h2><p>${featuredInsight.summary}</p><a class="underlined" href="${featuredInsight.url}" target="_blank" rel="noopener noreferrer">Read the original LinkedIn article ${icon('northeast')}</a><p class="insight-source">Originally published as &ldquo;${featuredInsight.articleTitle}&rdquo;. The author&#39;s subsequent update adds follow-up to the approach.</p></div>
+    <div class="insight-framework">${featuredInsight.image ? `<img class="insight-photo" src="${featuredInsight.image}" alt="${featuredInsight.imageAlt}" width="800" height="450" loading="lazy" />` : ''}<h3>${featuredInsight.label}</h3><ol>${featuredInsight.principles.map(([letter,title,description])=>`<li><span class="insight-letter" aria-hidden="true">${letter}</span><div><h4>${title}</h4><p>${description}</p></div></li>`).join('')}</ol></div>
+  </section>
   <section class="why section wrap">${eyebrow('08','THE TASTAR PERSPECTIVE')}<div class="why-grid" data-stagger>${[['compass','Technical knowledge','Expertise that informs practical decisions.'],['sprout','Practical agricultural support','A focus on the needs of your operation.'],['network','Industry connections','Relationships across the agricultural ecosystem.'],['layers','Market-focused thinking','Looking beyond production to possibility.']].map(([i,title,desc])=>`<article>${icon(i)}<h3>${title}</h3><p>${desc}</p></article>`).join('')}</div></section>
 
   <section class="cta-band"><div class="wrap">${motif}<span class="micro">GOOD CONVERSATIONS GROW POSSIBILITIES</span><h2 data-reveal>Let's grow better<br>opportunities together.</h2><p>Technical advice, agricultural solutions, or a new market opportunity.<br>Let's find your next step.</p>${link('Start a Conversation','contact','button button-forest')}</div></section>

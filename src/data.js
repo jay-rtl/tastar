@@ -38,3 +38,21 @@ export const profile = {
   portrait:null,
 };
 export const inquiryTypes = ['Consulting','Agricultural Products','Market Connections','Partnership','General Inquiry'];
+
+// Original article plus the author's follow-up update in the supplied screenshot.
+export const featuredInsight = {
+  title:'Good relationships grow through follow-through.',
+  label:'The SHIFT approach',
+  summary:'Valerio’s practical approach to customer relationships brings together service, hands-on help, useful information, follow-up, and teaching.',
+  articleTitle:'SHIT strategy to achieve sales target',
+  url:'https://www.linkedin.com/pulse/personal-strategy-achieve-sales-target-valerio-c-tanguilig',
+  image:null, // Add an approved local presentation photo, e.g. /images/valerio-training.jpg.
+  imageAlt:'Valerio Tanguilig presenting agricultural guidance to a group',
+  principles:[
+    ['S','Service','Start with the needs of the grower and where technical guidance can add value.'],
+    ['H','Help','Offer practical support grounded in the realities of day-to-day operations.'],
+    ['I','Inform','Share useful knowledge about products, technologies, and production practices.'],
+    ['F','Follow up','Check back with customers to see how recommendations are being put into practice.'],
+    ['T','Teach','Help growers understand and apply new approaches through training.'],
+  ],
+};
