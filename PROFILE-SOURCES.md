@@ -10,3 +10,11 @@ The public post at https://www.linkedin.com/posts/valerio-c-tanguilig-phd-a79479
 ## Featured insight
 
 Original article: https://www.linkedin.com/pulse/personal-strategy-achieve-sales-target-valerio-c-tanguilig (31 January 2020). Service, help, inform, and teach are paraphrased from the article. Follow-up and the SHIFT name come from the user-supplied screenshot of the author?s subsequent update. The article cover returned HTTP 403; no photo is included. `featuredInsight.image` supports an approved local photo later.
+
+## User-supplied career history (local review)
+
+The seven pasted experience files supplied on 4 October 2026 have identical SHA-256 hashes. The local profile and selected career timeline use this supplied history. Dates are retained; overlapping consulting and academic roles are intentional. Earlier experience is a selection, not an exhaustive CV. Employer names describe past roles and do not imply TASTAR partnerships. Six supplied chat photographs are visible in conversation but are not available as filesystem attachments; their gallery entries remain disabled until original files are provided. No images have been reconstructed.
+
+## Local photographs received
+
+All 13 JPG files in public/images/client/ were supplied by the user from the LinkedIn profile. The first six gallery items match the previously pasted photos. Seven additional images are available in an expandable gallery. Captions describe visible scenes only; individuals and farm locations are not identified. Original images are preserved and linked for full-size viewing. The user approved deployment of the reviewed experience section and all 13 photographs on 4 October 2026.

@@ -11,6 +11,12 @@ for(const width of [1440,1280,1024,768,430,390,375]){
       await page.locator(`#${id}`).scrollIntoViewIfNeeded();
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
     }
+    await page.locator('.more-field-photos summary').click();
+    for(const photo of await page.locator('#field-gallery img').all()){
+      await photo.scrollIntoViewIfNeeded();
+      await expect(photo).toBeVisible();
+      await photo.evaluate(image=>image.decode());
+    }
     expect(await page.locator('img').evaluateAll(images=>images.every(i=>i.complete&&i.naturalWidth>0))).toBeTruthy();
     if(width<1200){
       await page.getByRole('button',{name:'Open menu'}).click();
