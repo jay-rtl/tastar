@@ -8,13 +8,17 @@ import {sharedBrand, divisions, siteImages} from './brands.js';
 import {company as c, navigation, services, products, steps, profile, inquiryTypes, featuredInsight, experience, earlierExperience, consultingCapabilities, fieldPhotos} from './data.js';
 import {icon} from './icons.js';
 import {initMotion} from './motion.js';
+import {renderBusinessPage} from './business-page.js';
 
 const arrow = icon('arrow');
 const base = import.meta.env.BASE_URL;
 const eyebrow = (n,text) => `<div class="eyebrow"><span>${n}</span>${text}</div>`;
 const link = (text,target,cls='button') => `<a class="${cls}" href="#${target}">${text}${arrow}</a>`;
-const navLinks = () => navigation.map(([name,id])=>`<a href="#${id}">${name}</a>`).join('');
-const brandLockup = () => `<a class="brand dual-brand" href="#home" aria-label="FRUJT GLOBAL Technologies and Services home"><img src="/brand/frujt-mark-light.svg" width="64" height="64" alt=""/><span class="dual-brand-text"><strong>FRUJT GLOBAL</strong><span>Technologies and Services</span></span></a>`;
+const pagePath = window.location.pathname.slice(base.length).replace(/index\.html$/, '').replace(/\/$/, '');
+const currentBusiness = divisions.find(d => pagePath === d.id);
+const navHref = id => divisions.some(d=>d.id===id) ? `${base}${id}/` : `${currentBusiness ? base : ''}#${id}`;
+const navLinks = () => navigation.map(([name,id])=>`<a href="${navHref(id)}" ${currentBusiness?.id===id?'aria-current="page"':''}>${name}</a>`).join('');
+const brandLockup = () => `<a class="brand dual-brand" href="${base}" aria-label="FRUJT GLOBAL Technologies and Services home"><img src="/brand/frujt-mark-light.svg" width="64" height="64" alt=""/><span class="dual-brand-text"><strong>FRUJT GLOBAL</strong><span>Technologies and Services</span></span></a>`;
 const photo = (item, extra='') => `<img src="${item.src}" alt="${item.alt}" ${extra}/>`;
 const motif = `<svg class="field-motif" viewBox="0 0 500 400" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1">${Array.from({length:12},(_,i)=>`<path d="M${-150+i*40} 400 250 ${i*19} 650 400"/>`).join('')}</g></svg>`;
 
@@ -47,7 +51,7 @@ document.querySelector('#app').innerHTML = `
     <div class="value-chain" data-stagger><div class="chain-progress" data-line></div>${[['01','Growers','Where it all begins'],['02','Technical expertise','Knowledge with purpose'],['03','Agricultural solutions','The right resources'],['04','Market opportunities','A wider perspective']].map(([n,title,text])=>`<a href="#${n==='04'?'markets':'services'}"><span class="chain-dot"></span><span class="micro">${n}</span><h3>${title}</h3><p>${text}</p>${icon('northeast')}</a>`).join('')}</div>
   </section>
 
-  <section id="divisions" class="divisions"><div class="wrap"><div class="division-heading"><div><div class="eyebrow">TWO BRANDS. ONE WEBSITE.</div><h2 data-reveal>Two connected businesses.<br>One shared purpose.</h2></div><p>Operating under the same ABN, TASTAR and Frujt Global share a connected business presence and a single contact point.</p></div><div class="division-grid" data-stagger>${divisions.map(d=>`<article id="${d.id}" class="division-card"><span class="micro">${d.label}</span><div class="division-logo">${d.id==='frujt-global'?'<img src="/brand/frujt-mark-dark.svg" alt="" width="64" height="64"/>':''}<h3>${d.name}</h3></div><p class="division-full-name">${d.fullName}</p><p>${d.description}</p>${d.focus.length ? `<ul>${d.focus.map(f=>`<li>${f}</li>`).join('')}</ul>` : '<div class="division-spacer"></div>'}<a class="underlined" href="#contact" data-inquiry="${d.inquiry}" data-division="${d.name}">${d.cta} ${icon('northeast')}</a></article>`).join('')}</div><nav class="division-shortcuts" aria-label="Explore our capabilities"><a href="#products">Agricultural inputs</a><a href="#markets">Market connections</a><a href="#field-gallery">In the field</a></nav></div></section>
+  <section id="divisions" class="divisions"><div class="wrap"><div class="division-heading"><div><div class="eyebrow">TWO BRANDS. ONE WEBSITE.</div><h2 data-reveal>Two connected businesses.<br>One shared purpose.</h2></div><p>Operating under the same ABN, TASTAR and Frujt Global share a connected business presence and a single contact point.</p></div><div class="division-grid" data-stagger>${divisions.map(d=>`<article id="${d.id}" class="division-card"><span class="micro">${d.label}</span><div class="division-logo">${d.id==='frujt-global'?'<img src="/brand/frujt-mark-dark.svg" alt="" width="64" height="64"/>':'<img src="/brand/tastar-mark.svg" alt="" width="64" height="90"/>'}<h3>${d.name}</h3></div><p class="division-full-name">${d.fullName}</p><p>${d.description}</p>${d.focus.length ? `<ul>${d.focus.map(f=>`<li>${f}</li>`).join('')}</ul>` : '<div class="division-spacer"></div>'}<a class="underlined" href="${base}${d.id}/">Explore ${d.name} ${icon('northeast')}</a></article>`).join('')}</div><nav class="division-shortcuts" aria-label="Explore our capabilities"><a href="#products">Agricultural inputs</a><a href="#markets">Market connections</a><a href="#field-gallery">In the field</a></nav></div></section>
 
   <section id="services" class="services section">
     <div class="wrap"><div class="section-top"><div>${eyebrow('02','WHAT WE DO')}<h2 data-reveal>Technical expertise.<br><span class="muted">Practical possibilities.</span></h2></div><p>Built around agriculture.<br>Shaped around your needs.</p></div>
@@ -61,7 +65,11 @@ document.querySelector('#app').innerHTML = `
   </section>
 
   <section id="products" class="products section"><div class="wrap">
-    <div class="section-top"><div>${eyebrow('04','AGRICULTURAL SOLUTIONS')}<h2 data-reveal>Resources for<br>productive agriculture.</h2></div><div class="section-aside"><p>The right solution starts with the right conversation. Explore our areas of focus.</p><span class="availability">Product range to be confirmed</span></div></div>
+    <div class="section-top"><div>${eyebrow('04','AGRICULTURAL SOLUTIONS')}<h2 data-reveal>Resources for<br>productive agriculture.</h2></div><div class="section-aside"><p>The right solution starts with the right conversation. Explore our areas of focus.</p><span class="availability">Ask about products and availability</span></div></div>
+    <article class="fruitlast-feature" aria-labelledby="fruitlast-title">
+      <div class="fruitlast-photo"><img src="/images/products/fruitlast-pouch.png" alt="Fruitlast white resealable pouch with its original green logo and fruit and vegetable packaging artwork" width="1024" height="1024" loading="lazy"/></div>
+      <div class="fruitlast-copy"><span class="eyebrow">PRODUCT SPOTLIGHT</span><h3 id="fruitlast-title">Fruitlast</h3><p class="lead">Developed with small-scale produce vendors in mind.</p><p>Valerio developed Fruitlast after observing the practices of vegetable and fruit vendors at roadside and local market stalls.</p><p class="fruitlast-note">Contact us for product details, directions for use, suitability, and availability.</p><a class="button button-forest" href="#contact" data-inquiry="Agricultural Products" data-product="Fruitlast">Inquire about Fruitlast ${icon('northeast')}</a></div>
+    </article>
     <div class="product-layout"><div class="product-visual"><img id="product-image" src="${products[0].image}" alt="${products[0].imageAlt}" width="1000" height="667" loading="lazy" /><div class="product-visual-overlay"><span class="micro">AGRICULTURAL SOLUTIONS</span><span>Made for the<br>way you grow.</span></div></div>
     <div class="product-list">${products.map((p,i)=>`<details class="product-item" ${i===0?'open':''}><summary><span class="micro">0${i+1}</span><h3>${p.name}</h3><span class="plus" aria-hidden="true">+</span></summary><div class="product-detail"><span class="micro">${p.category} / CATEGORY PREVIEW</span><p>${p.description} Specific products and availability will be added once confirmed.</p><a class="underlined" data-inquiry="Agricultural Products" data-product="${p.name}" href="#contact">Inquire about this category ${icon('northeast')}</a></div></details>`).join('')}</div></div>
   </div></section>
@@ -97,6 +105,13 @@ document.querySelector('#app').innerHTML = `
 </main>
 <footer><div class="wrap"><div class="footer-top"><div>${brandLockup()}<p class="footer-business-names">${c.fullName}<span>Frujt Global Technologies and Services</span></p><span>${c.location}</span></div><nav aria-label="Footer navigation">${navLinks()}</nav><div class="footer-connect"><span class="micro">STAY CONNECTED</span><a href="${c.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn ${icon('northeast')}</a><a href="mailto:${c.email}">Email us ${icon('northeast')}</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} TASTAR &amp; Frujt Global. All rights reserved.</span><div><button data-legal="privacy">Privacy Policy</button><button data-legal="terms">Terms</button><a href="#home">Back to top ↑</a></div></div></div></footer>
 <dialog id="legal-dialog" aria-labelledby="legal-title"><button class="dialog-close" aria-label="Close">×</button><h2 id="legal-title"></h2><div id="legal-content"></div></dialog>`.replaceAll('src="/','src="'+base).replaceAll('srcset="/','srcset="'+base).replaceAll(', /images/',`, ${base}images/`);
+
+if (currentBusiness) {
+  const contact = document.querySelector('#contact');
+  document.querySelector('main').innerHTML = renderBusinessPage(currentBusiness, base);
+  document.querySelector('main').append(contact);
+  document.body.classList.add('business-page');
+}
 
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('#mobile-nav');

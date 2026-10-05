@@ -5,6 +5,10 @@ test('shared brand navigation and division inquiries',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');
   await expect(page.locator('.site-header .dual-brand-text strong')).toHaveText('FRUJT GLOBAL');
   for(const name of ['Frujt Global','TASTAR']){
+    await page.goto('/');
+    await page.getByRole('navigation',{name:'Main navigation',exact:true}).getByRole('link',{name,exact:true}).click();
+    await expect(page.getByRole('heading',{level:1})).toHaveText(name);
+    await page.reload();
     await page.getByRole('link',{name:`Connect with ${name}`,exact:true}).click();
     await expect(page.getByLabel('How can we help?')).toHaveValue(`I'd like to discuss ${name} services.`);
   }
@@ -69,5 +73,27 @@ test('automated accessibility scan on desktop and mobile',async({page})=>{
     await page.locator('#contact').scrollIntoViewIfNeeded();
     const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
     expect(results.violations).toEqual([]);
+  }
+});
+
+test('business pages return to every shared homepage section',async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});
+  for(const width of [1440,390]){
+    await page.setViewportSize({width,height:900});
+    for(const business of ['frujt-global','tastar']){
+      for(const [name,id] of [['Home','home'],['About','about'],['Services','services'],['Profile','profile'],['Contact','contact']]){
+        await page.goto(`/${business}/`);
+        const nav=page.getByRole('navigation',{name:width<1200?'Mobile navigation':'Main navigation',exact:true});
+        if(width<1200)await page.getByRole('button',{name:'Open menu'}).click();
+        await nav.getByRole('link',{name,exact:true}).click();
+        await expect(page).toHaveURL(new RegExp(`/#${id}$`));
+        await expect(page.locator('h1')).toContainText('Grounded in agriculture.');
+        await expect(page.locator(`#${id}`)).toBeInViewport();
+        await expect.poll(()=>page.locator(`#${id}`).evaluate(el=>Math.abs(el.getBoundingClientRect().top))).toBeLessThan(120);
+      }
+      await page.goto(`/${business}/`);
+      await page.locator('.site-header .brand').click();
+      await expect(page.locator('h1')).toContainText('Grounded in agriculture.');
+    }
   }
 });

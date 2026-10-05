@@ -13,7 +13,7 @@ export const divisions = [
 export const siteImages = {
   hero:{src:'/images/agriculture/field-conversations.jpg',alt:'Two people walking through long rows of growing crops'},
   approach:{src:'/images/tastar/grower-field-visit.jpg',alt:'A group discussing crop conditions during a field visit'},
-  about:{src:'/images/agriculture/strawberry-beds.jpg',alt:'Rows of strawberry plants growing beside trees'},
+  about:{src:'/images/client/ef539a44-f51d-4912-a00d-c524e0fde04f.jpg',alt:'Sunlight falling across orderly rows of orchard trees'},
   products:{src:'/images/agriculture/strawberry-fruit.jpg',alt:'Strawberries at different stages of ripening on plants; field photography, not a product catalogue'},
   portrait:{src:'/images/profile/valerio-tanguilig.jpg',alt:'Valerio C. Tanguilig in an apple orchard'},
 };

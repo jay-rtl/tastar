@@ -55,3 +55,45 @@
 @media(max-width:600px){.brand.dual-brand{gap:9px}.brand.dual-brand img{width:38px;height:38px}.dual-brand-text strong{font-size:12px}.dual-brand-text span{font-size:8px;letter-spacing:0}.hero-brand-line{gap:15px}.hero-brand-line span{font-size:9px}.division-logo img{width:58px;height:58px}.footer-top .dual-brand img{width:45px}.footer-top .dual-brand-text span{font-size:10px}}
 
 .portrait-placeholder.has-portrait{aspect-ratio:534/752;height:auto;min-height:0;width:100%;max-width:450px}.has-portrait .profile-portrait{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+
+/* Product photography is contained so the full original pack remains visible. */
+.fruitlast-feature{display:grid;grid-template-columns:1fr 1fr;background:#ebece4;border:1px solid #d6ddcf;margin-bottom:65px}
+.fruitlast-photo{display:grid;place-items:center;padding:35px;background:radial-gradient(ellipse at center,#fff 0%,#f2f2e9 75%);min-height:440px}
+.fruitlast-photo img{display:block;width:100%;max-width:390px;height:400px;object-fit:contain}
+.fruitlast-copy{padding:55px 45px;align-self:center}
+.fruitlast-copy h3{font-size:46px;letter-spacing:-1.7px;margin:18px 0}
+.fruitlast-copy .lead{font-size:21px;line-height:1.5;margin-bottom:18px}
+.fruitlast-copy p:not(.lead){font-size:14px;color:#47594e;line-height:1.8}
+.fruitlast-note{margin:20px 0 25px}
+@media(max-width:800px){.fruitlast-copy{padding:30px}.fruitlast-photo{padding:20px;min-height:350px}.fruitlast-photo img{height:320px}}
+@media(max-width:600px){.fruitlast-feature{grid-template-columns:1fr;margin-bottom:40px}.fruitlast-photo{min-height:320px}.fruitlast-photo img{height:300px}.fruitlast-copy{padding:30px 25px}.fruitlast-copy h3{font-size:36px}.fruitlast-copy .lead{font-size:19px}.fruitlast-copy .button{font-size:11px}}
+
+/* Dedicated business pages retain the shared Frujt Global identity. */
+.business-page .site-header{background:var(--green)}
+.business-hero{padding-top:140px;padding-bottom:80px}
+.business-breadcrumb{display:flex;gap:15px;font-size:12px;margin-bottom:45px;color:#4b6255}
+.business-breadcrumb a{text-decoration:underline;text-underline-offset:4px}
+.business-hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:65px;align-items:center}
+.business-hero h1{font-size:clamp(42px,5.5vw,78px);letter-spacing:-3px;line-height:1.15;margin:20px 0}
+.business-mark{margin-top:25px;display:block}
+.business-full-name{font-size:14px;margin-bottom:25px;color:#4b6255}
+.business-hero .lead{font-size:19px;line-height:1.7;margin-bottom:30px}
+.business-hero-photo{width:100%;height:480px;object-fit:cover}
+.business-support{background:#eae8e0}
+.business-focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin:40px 0}
+.business-focus-grid article{border-top:1px solid #a8b8aa;padding:25px 0}
+.business-focus-grid h3{font-size:21px;margin:18px 0 12px}
+.business-focus-grid p,.business-connection p{font-size:14px;line-height:1.8;color:#47594e}
+.business-connection{display:grid;grid-template-columns:1.3fr 1fr;gap:80px}
+.business-connection h2{margin-bottom:25px}.business-connection .underlined{margin-top:25px}
+.business-connection aside{padding:35px;background:#e1e7e7}
+.business-connection h3{font-size:32px;margin:20px 0}
+@media(max-width:800px){.business-hero-grid{gap:30px}.business-hero-photo{height:390px}.business-focus-grid{grid-template-columns:1fr 1fr}.business-connection{gap:35px}}
+@media(max-width:600px){.business-hero{padding-top:110px;padding-bottom:45px}.business-breadcrumb{margin-bottom:30px}.business-hero-grid,.business-connection{grid-template-columns:1fr}.business-hero h1{letter-spacing:-1.8px}.business-hero .lead{font-size:16px}.business-hero-photo{height:280px}.business-focus-grid{grid-template-columns:1fr;gap:10px}.business-connection aside{padding:25px}.business-mark{width:65px;height:65px}}
+
+/* Refined supplied TASTAR identity: leaf/bulb silhouette and italic serif name. */
+#tastar .division-logo h3,.tastar-wordmark{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-style:italic;color:#228729;letter-spacing:.02em}
+.business-hero h1.tastar-wordmark{letter-spacing:.01em;margin-top:14px}
+.business-mark.tastar-business-mark{width:90px;height:126px;object-fit:contain}
+.connected-tastar-mark{display:block;margin-top:22px}
+@media(max-width:600px){.business-mark.tastar-business-mark{width:65px;height:91px}}

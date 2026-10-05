@@ -6,13 +6,14 @@ export function initMotion(){
   const header=document.querySelector('#header');
   const updateHeader=()=>header.classList.toggle('scrolled',window.scrollY>40);
   window.addEventListener('scroll',updateHeader,{passive:true});updateHeader();
-  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){document.querySelectorAll('.desktop-nav a').forEach(a=>{if(a.hash===`#${entry.target.id}`)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}});},{rootMargin:'-15% 0px -65% 0px'});
+  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){document.querySelectorAll('.desktop-nav a').forEach(a=>{if(a.getAttribute('aria-current')==='page')return;if(a.pathname===window.location.pathname&&a.hash===`#${entry.target.id}`)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}});},{rootMargin:'-15% 0px -65% 0px'});
   document.querySelectorAll('main section[id], .division-card[id]').forEach(s=>observer.observe(s));
   const mm=gsap.matchMedia();
   mm.add('(prefers-reduced-motion: no-preference)',()=>{
     const timeline=gsap.timeline({defaults:{ease:'power2.out'}});
     timeline.from('.site-header .brand, .desktop-nav, .header-cta',{y:-12,opacity:0,duration:.7,stagger:.08})
-      .from('.hero-eyebrow',{y:14,opacity:0,duration:.6},.15)
+;
+    if(document.querySelector('.hero')) timeline.from('.hero-eyebrow',{y:14,opacity:0,duration:.6},.15)
       .from('.hero h1>span',{y:25,opacity:0,clipPath:'inset(0 0 100% 0)',duration:1,stagger:.12},.25)
       .from('.hero-content>p, .hero-actions',{y:15,opacity:0,duration:.7,stagger:.12},.6)
       .from('[data-scale]',{scale:1.045,duration:1.7},0);

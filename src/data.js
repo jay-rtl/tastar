@@ -16,7 +16,7 @@ export const services = [
 // Category placeholders only. Replace with confirmed products, descriptions and images.
 // Product structure supports name, category, description, image and imageAlt.
 export const products = [
-  {name:'Agricultural inputs',category:'Inputs',description:'Explore inputs suited to your agricultural operation.',image:'/images/agriculture/strawberry-fruit.jpg',imageAlt:'Strawberries growing on plants; field photography, not a product catalogue'},
+  {name:'Agricultural inputs',category:'Inputs',description:'Explore inputs suited to your agricultural operation.',image:'/images/client/63873b8c-89e7-4f3a-83fc-a95aea07ec1e.jpg',imageAlt:'Vegetable crops growing in rows beneath protective netting'},
   {name:'Crop support solutions',category:'Crop support',description:'Discuss resources to support your crop and growing needs.'},
   {name:'Technical products',category:'Technical products',description:'Explore technical product needs with TASTAR.'},
   {name:'Farm technologies',category:'Technology',description:'Start a conversation about technology for your operation.'},
@@ -66,19 +66,18 @@ export const consultingCapabilities = [
 // Original photographs supplied locally by the user from the LinkedIn profile.
 // Captions describe visible activities only; no farm ownership or location is inferred.
 export const fieldPhotos = [
-  {src:'/images/client/1789904269782.jpg',alt:'Tractor laying plastic mulch along prepared planting beds',caption:'Preparing the ground'},
-  {src:'/images/client/1789904269365.jpg',alt:'Young crops growing in parallel mulched rows',caption:'Establishing a crop'},
-  {src:'/images/client/1789904269187.jpg',alt:'Dense green crops growing in cultivated field rows',caption:'Crop growth in the field'},
+  {src:'/images/client/1448671e-0169-4258-9fc3-07c3006208f2.jpg',alt:'Tall tomato vines with ripening fruit inside a greenhouse',caption:'Growing under cover'},
+  {src:'/images/client/e61f52b5-09e1-46a4-a495-368bb0c2cbfa.jpg',alt:'Bunches of pink grapes hanging from a vine',caption:'Fruit on the vine'},
   {src:'/images/client/1776831811727.jpg',alt:'A group discussing crop conditions during a field visit',caption:'Learning together on farm'},
-  {src:'/images/client/1776831819168.jpg',alt:'Green crop rows with plant residue between the beds',caption:'A closer look at crop rows'},
-  {src:'/images/client/1776831813953.jpg',alt:'Two people walking through rows of growing crops',caption:'Practical field conversations'},
-  {src:'/images/client/1775241585520.jpg',alt:'People visiting a growing area with trellised vines',caption:'Conversations among the crops'},
+  {src:'/images/client/774b3cda-6166-4a6e-aad1-cf1c144fc6c8.jpg',alt:'Ripe red cherries hanging among green leaves',caption:'Orchard fruit up close'},
+  {src:'/images/client/915bb3e1-1bd1-43cd-b40c-6df3bf2ca769.jpg',alt:'Long rows of leafy crops under a clear blue sky',caption:'A view across the growing rows'},
+  {src:'/images/client/ece16f5d-2edd-4961-9e02-e9a7b3b662ae.jpg',alt:'Dark purple eggplants growing on a plant above a mulched bed',caption:'Vegetable crops in focus'},
+  {src:'/images/client/07c79561-dfd2-4d77-b582-44013aacb71e.jpg',alt:'Bunches of green bananas growing on a banana plant',caption:'Bananas on the plant'},
+  {src:'/images/client/9ec4958f-87f4-434a-9baf-103aeaf9b941.jpg',alt:'Orange citrus fruit growing among glossy green leaves',caption:'Citrus in the orchard'},
+  {src:'/images/client/28259cb0-9b07-469c-a17f-b5627ebda81d.jpg',alt:'A field of grain beneath an overcast sky',caption:'Across the grain field'},
+  {src:'/images/client/1789904269782.jpg',alt:'Tractor laying plastic mulch along prepared planting beds',caption:'Preparing the ground'},
   {src:'/images/client/1775256128759.jpg',alt:'A person standing beside harvested green peppers in buckets',caption:'From the field to harvest'},
-  {src:'/images/client/1783563520923.jpg',alt:'Ripening strawberries on plants in a mulched bed',caption:'Fruit development up close'},
-  {src:'/images/client/1783563527062.jpg',alt:'Rows of strawberry plants under a blue sky',caption:'Growing across the season'},
   {src:'/images/client/1783563534659.jpg',alt:'Strawberries at different stages of ripening beside a flower',caption:'Flowering and fruit development'},
-  {src:'/images/client/1783563534959.jpg',alt:'Strawberry beds extending across a cultivated growing area',caption:'A view across the growing beds'},
-  {src:'/images/client/1783563541658.jpg',alt:'Strawberry rows alongside trees at the edge of a field',caption:'Field observations'},
 ];
 export const inquiryTypes = ['Consulting','Agricultural Products','Market Connections','Partnership','General Inquiry'];
 
