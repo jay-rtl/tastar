@@ -1,0 +1,1 @@
+Reserved for client-approved Frujt Global photography. Add image paths in src/brands.js once supplied. Do not label shared field photographs as Frujt-owned properties or projects without confirmation.

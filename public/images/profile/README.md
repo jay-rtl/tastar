@@ -1,0 +1,1 @@
+Owner portrait supplied by the user on 5 October 2026. valerio-tanguilig.jpg is copied from the supplied original without image alteration. The profile uses the full portrait composition and its path is configured in src/brands.js.

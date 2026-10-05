@@ -7,7 +7,7 @@ export function initMotion(){
   const updateHeader=()=>header.classList.toggle('scrolled',window.scrollY>40);
   window.addEventListener('scroll',updateHeader,{passive:true});updateHeader();
   const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){document.querySelectorAll('.desktop-nav a').forEach(a=>{if(a.hash===`#${entry.target.id}`)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}});},{rootMargin:'-15% 0px -65% 0px'});
-  document.querySelectorAll('main section[id]').forEach(s=>observer.observe(s));
+  document.querySelectorAll('main section[id], .division-card[id]').forEach(s=>observer.observe(s));
   const mm=gsap.matchMedia();
   mm.add('(prefers-reduced-motion: no-preference)',()=>{
     const timeline=gsap.timeline({defaults:{ease:'power2.out'}});

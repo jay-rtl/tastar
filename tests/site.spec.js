@@ -1,13 +1,24 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
+test('shared brand navigation and division inquiries',async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');
+  await expect(page.locator('.site-header .dual-brand-text strong')).toHaveText('FRUJT GLOBAL');
+  for(const name of ['Frujt Global','TASTAR']){
+    await page.getByRole('link',{name:`Connect with ${name}`,exact:true}).click();
+    await expect(page.getByLabel('How can we help?')).toHaveValue(`I'd like to discuss ${name} services.`);
+  }
+  expect(await page.locator('a[href^="#"]').evaluateAll(links=>links.every(a=>document.getElementById(a.hash.slice(1))))).toBeTruthy();
+  expect(await page.locator('img').evaluateAll(images=>images.every(i=>!i.src.includes('/images/fields')&&!i.src.includes('/images/harvest')))).toBeTruthy();
+});
+
 for(const width of [1440,1280,1024,768,430,390,375]){
   test(`layout and navigation at ${width}px`,async({page})=>{
     await page.setViewportSize({width,height:900});
     const errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto('/');await page.emulateMedia({reducedMotion:'reduce'});
     await expect(page.getByRole('heading',{level:1})).toBeVisible();
-    for(const id of ['services','products','markets','about','profile','contact']){
+    for(const id of ['divisions','tastar','frujt-global','services','products','markets','about','profile','contact']){
       await page.locator(`#${id}`).scrollIntoViewIfNeeded();
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
     }
@@ -21,7 +32,7 @@ for(const width of [1440,1280,1024,768,430,390,375]){
     if(width<1200){
       await page.getByRole('button',{name:'Open menu'}).click();
       await expect(page.getByRole('navigation',{name:'Mobile navigation'})).toBeVisible();
-      await page.getByRole('navigation',{name:'Mobile navigation'}).getByRole('link',{name:'Products',exact:true}).click();
+      await page.getByRole('navigation',{name:'Mobile navigation'}).getByRole('link',{name:'Frujt Global',exact:true}).click();
       await expect(page.getByRole('button',{name:'Open menu'})).toHaveAttribute('aria-expanded','false');
     }
     expect(errors).toEqual([]);
@@ -49,7 +60,7 @@ test('mobile keyboard navigation and reduced motion',async({page})=>{
   await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');
   const toggle=page.getByRole('button',{name:'Open menu'});await toggle.click();await page.keyboard.press('Escape');await expect(toggle).toBeFocused();
   expect(await page.evaluate(()=>window.getComputedStyle(document.documentElement).scrollBehavior)).toBe('auto');
-  await page.locator('#profile').scrollIntoViewIfNeeded();await expect(page.getByRole('heading',{name:'Valerio Tanguilig'})).toBeVisible();
+  await page.locator('#profile').scrollIntoViewIfNeeded();await expect(page.getByRole('heading',{name:'Valerio C. Tanguilig, PhD'})).toBeVisible();
 });
 test('automated accessibility scan on desktop and mobile',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});
