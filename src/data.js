@@ -5,7 +5,7 @@ export const company = {
   location: 'Brisbane, Queensland, Australia',
   linkedin: 'https://www.linkedin.com/in/valerio-tanguilig-phd-a79479125/',
 };
-export const navigation = [['Home','home'],['About','about'],['Frujt Global','frujt-global'],['TASTAR','tastar'],['Services','services'],['Profile','profile'],['Contact','contact']];
+export const navigation = [['Home','home'],['About','about'],['TASTAR','tastar'],['Services','services'],['Profile','profile'],['Contact','contact']];
 export const services = [
   {name:'Agricultural consulting', description:'Practical technical guidance for farmers, growers, and agricultural businesses.', icon:'compass', type:'Consulting'},
   {name:'Agricultural inputs', description:'Connecting your operation with agricultural inputs, technologies, and resources.', icon:'sprout', type:'Agricultural Products'},
@@ -68,7 +68,7 @@ export const consultingCapabilities = [
 export const fieldPhotos = [
   {src:'/images/client/1448671e-0169-4258-9fc3-07c3006208f2.jpg',alt:'Tall tomato vines with ripening fruit inside a greenhouse',caption:'Growing under cover'},
   {src:'/images/client/e61f52b5-09e1-46a4-a495-368bb0c2cbfa.jpg',alt:'Bunches of pink grapes hanging from a vine',caption:'Fruit on the vine'},
-  {src:'/images/client/1776831811727.jpg',alt:'A group discussing crop conditions during a field visit',caption:'Learning together on farm'},
+  {src:'/images/client/07a9184f-4e3e-4af9-855e-83cb705060ad.jpg',alt:'A grower tending tall tomato vines from a raised platform inside a greenhouse',caption:'Hands-on crop care'},
   {src:'/images/client/774b3cda-6166-4a6e-aad1-cf1c144fc6c8.jpg',alt:'Ripe red cherries hanging among green leaves',caption:'Orchard fruit up close'},
   {src:'/images/client/915bb3e1-1bd1-43cd-b40c-6df3bf2ca769.jpg',alt:'Long rows of leafy crops under a clear blue sky',caption:'A view across the growing rows'},
   {src:'/images/client/ece16f5d-2edd-4961-9e02-e9a7b3b662ae.jpg',alt:'Dark purple eggplants growing on a plant above a mulched bed',caption:'Vegetable crops in focus'},

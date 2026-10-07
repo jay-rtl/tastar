@@ -97,3 +97,26 @@
 .business-mark.tastar-business-mark{width:90px;height:126px;object-fit:contain}
 .connected-tastar-mark{display:block;margin-top:22px}
 @media(max-width:600px){.business-mark.tastar-business-mark{width:65px;height:91px}}
+
+/* Client hero selection, 7 October 2026: keep the owner clear of the headline. */
+.hero .hero-image{left:38%}
+.hero .hero-image img{object-position:43% 55%}
+.hero .hero-shade{background:linear-gradient(90deg,#10281f 30%,#10281fe8 40%,#10281f35 67%,#10281f12),linear-gradient(0deg,#10281fe8,transparent 35%)}
+.hero h1{max-width:660px;font-size:clamp(44px,4.3vw,62px)}
+@media(max-width:800px){.hero .hero-image{left:28%}.hero h1{max-width:510px;font-size:46px}.hero .hero-shade{background:linear-gradient(90deg,#10281ff5 20%,#10281fa8 55%,#10281f22),linear-gradient(0deg,#10281f,transparent 65%)}}
+@media(max-width:600px){.hero{height:auto;min-height:0;display:block}.hero .hero-image{left:0;height:380px;bottom:auto}.hero .hero-image img{object-position:43% 40%}.hero .hero-shade{height:390px;bottom:auto;background:linear-gradient(0deg,#10281f 0%,#10281f05 38%,#10281f22 80%,#10281f99)}.hero{background:#10281f}.hero .hero-content{padding-top:355px;padding-bottom:100px}.hero h1{font-size:39px;max-width:100%}.hero .hero-content>p{font-size:13px}.hero .hero-bottom{bottom:22px}.hero .hero-grid{display:none}}
+
+@media(max-width:600px){.hero{max-height:none}.site-header{background:#16352cf2}}
+@media(min-width:601px){.site-header:not(.scrolled){background:linear-gradient(90deg,#10281f99,#10281f9c)}}
+.tastar-purpose>h2{margin:22px 0 40px}
+.tastar-purpose-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-bottom:45px}
+.tastar-purpose-grid article{padding:30px;background:#eae8e0;border-top:3px solid #286185}
+.tastar-purpose h3{font-size:23px;margin-bottom:15px}
+.tastar-purpose p{font-size:15px;line-height:1.8;color:#47594e}
+.tastar-values{display:grid;grid-template-columns:1fr 1fr;gap:30px 45px}
+.tastar-values article{display:flex;gap:20px;padding:25px 0;border-top:1px solid #c4cfc3}
+.tastar-values .micro{color:#286185;padding-top:7px}
+@media(max-width:600px){.tastar-purpose-grid,.tastar-values{grid-template-columns:1fr;gap:20px}.tastar-purpose-grid article{padding:25px}.tastar-purpose h3{font-size:21px}.tastar-values article{padding:20px 0}}
+
+.brand.dual-brand .dual-brand-text strong{font-size:20px;letter-spacing:2px}.brand.dual-brand img{width:48px;height:48px}.hero-brand-line span{max-width:270px}
+@media(max-width:600px){.brand.dual-brand .dual-brand-text strong{font-size:17px}.brand.dual-brand img{width:38px;height:38px}.hero-brand-line{flex-wrap:wrap;gap:8px 15px}}

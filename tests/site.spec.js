@@ -3,8 +3,8 @@ import AxeBuilder from '@axe-core/playwright';
 
 test('shared brand navigation and division inquiries',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');
-  await expect(page.locator('.site-header .dual-brand-text strong')).toHaveText('FRUJT GLOBAL');
-  for(const name of ['Frujt Global','TASTAR']){
+  await expect(page.locator('.site-header .dual-brand-text strong')).toHaveText('TASTAR');
+  for(const name of ['TASTAR']){
     await page.goto('/');
     await page.getByRole('navigation',{name:'Main navigation',exact:true}).getByRole('link',{name,exact:true}).click();
     await expect(page.getByRole('heading',{level:1})).toHaveText(name);
@@ -22,7 +22,7 @@ for(const width of [1440,1280,1024,768,430,390,375]){
     const errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto('/');await page.emulateMedia({reducedMotion:'reduce'});
     await expect(page.getByRole('heading',{level:1})).toBeVisible();
-    for(const id of ['divisions','tastar','frujt-global','services','products','markets','about','profile','contact']){
+    for(const id of ['services','products','markets','about','profile','contact']){
       await page.locator(`#${id}`).scrollIntoViewIfNeeded();
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
     }
@@ -36,7 +36,7 @@ for(const width of [1440,1280,1024,768,430,390,375]){
     if(width<1200){
       await page.getByRole('button',{name:'Open menu'}).click();
       await expect(page.getByRole('navigation',{name:'Mobile navigation'})).toBeVisible();
-      await page.getByRole('navigation',{name:'Mobile navigation'}).getByRole('link',{name:'Frujt Global',exact:true}).click();
+      await page.getByRole('navigation',{name:'Mobile navigation'}).getByRole('link',{name:'TASTAR',exact:true}).click();
       await expect(page.getByRole('button',{name:'Open menu'})).toHaveAttribute('aria-expanded','false');
     }
     expect(errors).toEqual([]);
