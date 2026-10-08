@@ -49,7 +49,6 @@ export const experience = [
 ];
 export const earlierExperience = [
   {company:'TND Farm',role:'Farm Hand / Consultant',dates:'November 2019 - January 2021',description:'Hands-on farm work and support for the farm’s food safety and quality management system.'},
-  {company:'School of Agricultural Sciences, Xichang University',role:'Visiting Professor',dates:'October 2017 - October 2020',description:'Professorial teaching on tailored crop nutrition for modern production systems.'},
   {company:'Terragen',role:'Plant Biologist - Field',dates:'November 2015 - December 2016',description:'Field trials, horticultural crop research, and technical liaison with growers.'},
   {company:'Golden Circle',role:'Manager, Horticulture',dates:'January 2003 - October 2005',description:'Grower services, research collaboration, and best management practices for pineapple and beetroot production.'},
   {company:'Fresh Del Monte',role:'Senior Manager',dates:'August 2000 - May 2002',description:'Pineapple field operations, production planning, fruit quality, and export market requirements.'},
@@ -71,7 +70,6 @@ export const fieldPhotos = [
   {src:'/images/client/07a9184f-4e3e-4af9-855e-83cb705060ad.jpg',alt:'A grower tending tall tomato vines from a raised platform inside a greenhouse',caption:'Hands-on crop care'},
   {src:'/images/client/774b3cda-6166-4a6e-aad1-cf1c144fc6c8.jpg',alt:'Ripe red cherries hanging among green leaves',caption:'Orchard fruit up close'},
   {src:'/images/client/915bb3e1-1bd1-43cd-b40c-6df3bf2ca769.jpg',alt:'Long rows of leafy crops under a clear blue sky',caption:'A view across the growing rows'},
-  {src:'/images/client/ece16f5d-2edd-4961-9e02-e9a7b3b662ae.jpg',alt:'Dark purple eggplants growing on a plant above a mulched bed',caption:'Vegetable crops in focus'},
   {src:'/images/client/07c79561-dfd2-4d77-b582-44013aacb71e.jpg',alt:'A bunch of green bananas',caption:'Banana bunch'},
   {src:'/images/client/9ec4958f-87f4-434a-9baf-103aeaf9b941.jpg',alt:'Orange citrus fruit growing among glossy green leaves',caption:'Citrus in the orchard'},
   {src:'/images/client/28259cb0-9b07-469c-a17f-b5627ebda81d.jpg',alt:'A field of grain beneath an overcast sky',caption:'Across the grain field'},
