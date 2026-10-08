@@ -32,9 +32,9 @@ export const steps = [
 // Public experience entries omit role titles and dates; do not infer these.
 export const profile = {
   biography:'Valerio is a consultant, agronomist, and plant biologist whose experience spans crop production, research, food safety and quality systems, and agricultural business development. Through TASTAR, he supports primary producers and food processors with practical technical and management advice.',
-  qualifications:'University of the Philippines Los Baños; Nutrient Advantage Agronomy in Practice (Incitec Pivot Fertilisers, 2017).',
+  qualifications:['University of the Philippines at Los Banos','PhD Agronomy (Crop Physiology and Crop Production & Management)','MS in Botany (Plant Physiology)','BS in Botany'],
   experience:'TASTAR consulting since 2013, with earlier roles in agricultural research, production management, quality assurance, and university teaching.',
-  expertise:'Crop and soil management, tailored crop nutrition, food safety and quality systems, organic production, post-harvest quality, and grower training.',
+  expertise:'Crop and soil management, tailored crop nutrition, food safety and quality systems, organic and regenerative production, post-harvest quality, and grower training.',
   portrait:null,
 };
 
@@ -60,7 +60,7 @@ export const earlierExperience = [
 export const consultingCapabilities = [
   ['Crop & soil management','Crop nutrition programs, soil and tissue test interpretation, irrigation, and practical production advice.'],
   ['Food safety & quality','Support with food safety and quality management systems, internal auditing, and customer requirements.'],
-  ['Production & post-harvest','Plant propagation, nursery management, protected cropping, organic production, and post-harvest quality.'],
+  ['Production & post-harvest','Protected cropping, organic and regenerative production, and post-harvest quality management.'],
   ['Research & grower training','Field and varietal trials, technical seminars, seed quality management, and practical grower education.'],
 ];
 // Original photographs supplied locally by the user from the LinkedIn profile.
@@ -72,14 +72,14 @@ export const fieldPhotos = [
   {src:'/images/client/774b3cda-6166-4a6e-aad1-cf1c144fc6c8.jpg',alt:'Ripe red cherries hanging among green leaves',caption:'Orchard fruit up close'},
   {src:'/images/client/915bb3e1-1bd1-43cd-b40c-6df3bf2ca769.jpg',alt:'Long rows of leafy crops under a clear blue sky',caption:'A view across the growing rows'},
   {src:'/images/client/ece16f5d-2edd-4961-9e02-e9a7b3b662ae.jpg',alt:'Dark purple eggplants growing on a plant above a mulched bed',caption:'Vegetable crops in focus'},
-  {src:'/images/client/07c79561-dfd2-4d77-b582-44013aacb71e.jpg',alt:'Bunches of green bananas growing on a banana plant',caption:'Bananas on the plant'},
+  {src:'/images/client/07c79561-dfd2-4d77-b582-44013aacb71e.jpg',alt:'A bunch of green bananas',caption:'Banana bunch'},
   {src:'/images/client/9ec4958f-87f4-434a-9baf-103aeaf9b941.jpg',alt:'Orange citrus fruit growing among glossy green leaves',caption:'Citrus in the orchard'},
   {src:'/images/client/28259cb0-9b07-469c-a17f-b5627ebda81d.jpg',alt:'A field of grain beneath an overcast sky',caption:'Across the grain field'},
   {src:'/images/client/1789904269782.jpg',alt:'Tractor laying plastic mulch along prepared planting beds',caption:'Preparing the ground'},
   {src:'/images/client/1775256128759.jpg',alt:'A person standing beside harvested green peppers in buckets',caption:'From the field to harvest'},
   {src:'/images/client/1783563534659.jpg',alt:'Strawberries at different stages of ripening beside a flower',caption:'Flowering and fruit development'},
 ];
-export const inquiryTypes = ['Consulting','Agricultural Products','Market Connections','Partnership','General Inquiry'];
+export const inquiryTypes = ['Consulting','Agricultural Products','Market Connections','Collaboration','General Inquiry'];
 
 // Original article plus the author's follow-up update in the supplied screenshot.
 export const featuredInsight = {
